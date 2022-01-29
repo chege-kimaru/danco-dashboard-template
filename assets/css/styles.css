@@ -1,0 +1,418 @@
+/* helpers */
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.k-margin {
+  margin-right: 1rem;
+}
+
+.k-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.k-span {
+  flex: 1 1 auto;
+}
+
+.k-bolder {
+  font-weight: bolder;
+}
+
+.k-bold {
+  font-weight: bold;
+}
+
+.k-accent {
+  color: #cc0000;
+}
+
+.k-primary {
+  color: #3366cc;
+}
+
+.k-primary-light {
+  color: #00b8e6;
+}
+
+.k-primary-lighter {
+  color: #6699ff;
+}
+
+.k-bg-default {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.k-bg-primary {
+  background-color: #3366cc;
+}
+
+.k-bg-primary-light {
+  background-color: #00b8e6;
+}
+
+.k-bg-primary-lighter {
+  background-color: #6699ff;
+}
+
+.k-text-12 {
+  font-size: 12px;
+}
+
+.k-text-14 {
+  font-size: 14px;
+}
+
+.k-text {
+  font-size: 16px;
+}
+
+.k-text-18 {
+  font-size: 18px;
+}
+
+.k-text-24 {
+  font-size: 24px;
+}
+/* end helpers */
+
+/* Layout */
+.k-body {
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.k-navbar {
+  /* layout */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: 64px;
+  z-index: 2;
+  /* content */
+  display: flex;
+  align-items: center;
+  padding: 5px 1rem;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+
+.k-navbar button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.k-navbar button:focus {
+  outline: none;
+}
+
+.k-navbar img.k-logo {
+  height: 40px;
+}
+
+.k-navbar button.k-menu {
+  background-color: transparent;
+  font-weight: lighter;
+}
+
+.k-navbar button.k-refresh {
+  padding: 5px 2rem 5px 16px;
+  border-radius: 24px;
+  min-width: 200px;
+}
+
+.k-navbar button.k-refresh-mb {
+  background-color: transparent;
+  font-size: 28px;
+}
+
+@media (max-width: 991px) {
+  .k-navbar button.k-refresh {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .k-navbar button.k-refresh-mb {
+    display: none;
+  }
+}
+
+.k-navbar button.k-timespan,
+button.k-profile {
+  padding: 5px 16px;
+  border-radius: 8px;
+  min-width: 130px;
+}
+
+@media (max-width: 991px) {
+  .k-navbar button.k-timespan {
+    display: none;
+  }
+}
+
+.k-navbar button.k-profile {
+  min-width: 200px;
+}
+
+.k-navbar button.k-profile-mb {
+  background-color: transparent;
+  font-size: 28px;
+}
+
+@media (max-width: 991px) {
+  .k-navbar button.k-profile {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .k-navbar button.k-profile-mb {
+    display: none;
+  }
+}
+
+.k-navbar button.k-message,
+button.k-notification {
+  background-color: transparent;
+  font-size: 28px;
+  position: relative;
+}
+
+.k-navbar button.k-message .k-messages-count,
+.k-notifications-count {
+  right: 0;
+  top: 0;
+  position: absolute;
+  font-size: 14px;
+  color: #cc0000;
+}
+
+.k-navbar button.k-notification .k-notifications-active {
+  right: 5px;
+  top: 2px;
+  position: absolute;
+  font-size: 14px;
+  background-color: #cc0000;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.k-navbar .k-search {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 16px;
+  border-radius: 24px;
+  min-width: 300px;
+}
+
+@media (max-width: 991px) {
+  .k-navbar .k-search {
+    display: none;
+  }
+}
+
+.k-navbar .k-search input {
+  border: none;
+  background-color: transparent;
+}
+
+.k-navbar .k-search input:focus {
+  outline: none;
+}
+
+/* End navbar */
+
+/* Sidebar */
+.k-sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  height: 100%;
+  border-radius: 0 10px 0 0;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+
+.k-sidebar.k-hidden {
+  /* display: none; */
+  /* width: 0; */
+  left: -200px;
+}
+
+.k-sidebar .k-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+}
+
+.k-sidebar .k-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.k-sidebar .k-sidebar-item {
+  display: flex;
+  align-items: center;
+}
+
+.k-sidebar .k-sidebar-item-title,
+.k-sidebar-item-link-default {
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.k-sidebar .k-sidebar-item-link-default {
+  margin-bottom: 1.2rem;
+}
+
+.k-sidebar .k-sidebar-item-link {
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-left: 24px;
+}
+
+/* End Sidebar */
+
+.k-content {
+  margin-top: 64px;
+  margin-left: 200px;
+  padding: 1rem;
+}
+
+@media (max-width: 991px) {
+  .k-content {
+    margin-left: 0;
+  }
+}
+
+.k-content.k-hidden-sidebar {
+  margin-left: 0;
+}
+
+/* end Layout */
+
+/* Cards content */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.k-card {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.k-row-1-card {
+  height: 440px;
+}
+
+.k-delivery-analytics-card .k-title {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.k-row-2-card {
+  height: 200px;
+  /* height: 100%; */
+}
+
+.k-row-3-card {
+  height: 300px;
+  /* height: 100%; */
+}
+
+.k-delivery-analytics-card canvas {
+  max-height: 250px;
+  width: 100%;
+}
+
+.k-pipes-delivery-summary-card canvas {
+  max-height: 200px;
+  width: 100%;
+}
+
+.k-track-deliveries-btn {
+  background-color: #00b8e6; /*#3366cc;*/
+  border-radius: 10px;
+  padding: 5px 16px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.k-track-deliveries-btn:focus {
+  outline: none;
+}
+
+.cost-variance-card .progress {
+  height: 28px;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+}
+
+.table-card table {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.table-card table th {
+  color: black;
+}
+
+.table-card table td {
+  border-top: none !important;
+}
+
+.table-card table th {
+  border-top: none !important;
+}
+/* end cards content */
+
+/* calendar */
+.week {
+  margin: 4px;
+}
+
+.week .day.today span {
+  background: #1565c0;
+  color: white;
+}
+
+.buttons-container {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  margin-top: 2rem;
+}

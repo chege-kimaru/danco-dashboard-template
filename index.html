@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danco Dashboard</title>
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Calendar css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/theme.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="k-body">
+    <!-- Nav-bar -->
+    <div class="k-navbar">
+      <button id="toggle-sidebar" class="k-margin k-menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <!-- logo -->
+      <img class="k-logo k-margin" src="assets/images/danco-logo.png" alt="" />
+      <!-- refresh orders -->
+      <button class="k-refresh k-margin">
+        <i class="fa fa-refresh k-margin"></i>
+        Refresh Orders
+      </button>
+      <button class="k-refresh-mb k-margin">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <!-- search -->
+      <div class="k-search k-margin">
+        <i class="fa fa-search k-margin"></i>
+        <input type="text" placeholder="search" />
+      </div>
+      <!-- time-span -->
+      <button class="k-timespan k-margin">
+        <span class="k-margin">Monthly</span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+
+      <span class="k-span"></span>
+
+      <!-- messages -->
+      <button class="k-message k-margin">
+        <i class="fa fa-envelope-o"></i>
+        <span class="k-messages-count">1</span>
+      </button>
+      <!-- notifications -->
+      <button class="k-notification k-margin">
+        <i class="fa fa-bell-o"></i>
+        <span class="k-notifications-active"></span>
+      </button>
+      <!-- time-span -->
+      <button class="k-profile">
+        <span class="k-margin">Anesu Makwasha</span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+      <button class="k-profile-mb">
+        <i class="fa fa-user-o"></i>
+      </button>
+    </div>
+    <!-- End Nav-bar -->
+
+    <!-- Side-bar -->
+    <div class="k-sidebar k-hidden">
+      <a href="#" class="k-sidebar-item k-sidebar-item-link-default">
+        <span class="k-icon"><i class="fa fa-tachometer k-margin"></i></span>
+        Dashboard
+      </a>
+      <div class="k-sidebar-item k-sidebar-item-title">
+        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+        Orders
+      </div>
+      <div class="k-sidebar-section">
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-th-large k-margin"></i>
+          New order
+        </a>
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-th-large k-margin"></i>
+          Order Summary
+        </a>
+      </div>
+      <div class="k-sidebar-item k-sidebar-item-title">
+        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+        Products
+      </div>
+      <div class="k-sidebar-section">
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-cube k-margin"></i>
+          Add product
+        </a>
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-cube k-margin"></i>
+          Product Summary
+        </a>
+      </div>
+      <div class="k-sidebar-item k-sidebar-item-title">
+        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+        Drivers
+      </div>
+      <div class="k-sidebar-section">
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-user k-margin"></i>
+          Add Driver
+        </a>
+        <a href="#" class="k-sidebar-item k-sidebar-item-link">
+          <i class="fa fa-user k-margin"></i>
+          Driver Report
+        </a>
+      </div>
+      <a href="#" class="k-sidebar-item k-sidebar-item-link-default">
+        <span class="k-icon"><i class="fa fa-cog k-margin"></i></span>
+        Settings
+      </a>
+      <a href="#" class="k-sidebar-item k-sidebar-item-link-default">
+        <span class="k-icon"><i class="fa fa-sign-out k-margin"></i></span>
+        Sign Out
+      </a>
+    </div>
+    <!-- End Side-bar -->
+
+    <!-- Main content -->
+    <div class="k-content k-hidden-sidebar">
+      <!-- row 1 -->
+      <div class="row">
+        <!-- deliver analytics card -->
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="k-card k-row-1-card k-delivery-analytics-card">
+            <div class="k-flex">
+              <h4 class="k-text-18 k-bolder">Delivery Analytics</h4>
+              <span class="k-span"></span>
+              <div class="k-flex">
+                <i class="fa fa-angle-left k-margin"></i>
+                <span class="k-accent k-bold k-margin">Sept,2022</span>
+                <i class="fa fa-angle-right"></i>
+              </div>
+            </div>
+            <div>
+              <p>
+                <span class="k-text-14 k-margin">Delivery Rates</span>
+                <i class="fa fa-angle-down"></i>
+              </p>
+              <p class="k-text-24">
+                <i class="fa fa-caret-down k-margin"></i>
+                <span class="k-accent k-bolder">45%</span>
+              </p>
+            </div>
+            <div>
+              <canvas id="delivery-analytics"></canvas>
+            </div>
+          </div>
+        </div>
+        <!-- End deliver analytics card -->
+        <!-- calendar card -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="k-card k-row-1-card">
+            <div id="calendar"></div>
+            <div class="text-center">
+              <button class="k-track-deliveries-btn">TRACK DELIVERIES</button>
+            </div>
+          </div>
+        </div>
+        <!-- End calendar card -->
+      </div>
+      <!-- end row 1 -->
+      <!-- row 2 -->
+      <div class="row">
+        <!-- total delivery cost card -->
+        <div class="col-lg-4 col-sm-12">
+          <div class="k-card k-row-2-card">
+            <div class="k-flex">
+              <h6 class="k-text k-bold">Total Delivery Cost</h6>
+              <span class="k-span"></span>
+              <a href="#" class="k-primary-light k-text-14 k-bold"
+                >VIEW DETAILS</a
+              >
+            </div>
+            <div>
+              <p class="k-text-24">
+                <i class="fa fa-caret-up k-margin"></i>
+                <span class="k-primary-light k-bolder">Kes. 54,505</span>
+              </p>
+            </div>
+            <div id="total-delivery-cost"></div>
+          </div>
+        </div>
+        <!-- End total delivery cost card -->
+        <!-- total weight delivered card -->
+        <div class="col-lg-4 col-sm-12">
+          <div class="k-card k-row-2-card">
+            <div class="k-flex">
+              <h6 class="k-text k-bold">Total Weight Delivered</h6>
+              <span class="k-span"></span>
+              <a href="#" class="k-primary-light k-text-14 k-bold"
+                >VIEW DETAILS</a
+              >
+            </div>
+            <div>
+              <p class="k-text-24">
+                <i class="fa fa-caret-up k-margin"></i>
+                <span class="k-primary-light k-bolder">35,582 kg</span>
+              </p>
+            </div>
+            <div id="total-weight-delivered"></div>
+          </div>
+        </div>
+        <!-- End total weight delivered card -->
+        <!-- cost variance card -->
+        <div class="col-lg-4 col-sm-12">
+          <div class="k-card k-row-2-card cost-variance-card">
+            <div class="k-flex">
+              <h6 class="k-text k-bold">Cost Variance</h6>
+              <span class="k-span"></span>
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+            <div>
+              <p class="k-text-24">
+                <i class="fa fa-caret-up k-margin"></i>
+                <span class="k-primary-light k-bolder">65%</span>
+              </p>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar k-bg-primary"
+                role="progressbar"
+                style="width: 70%; z-index: 3; border-radius: 0 20px 20px 0"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <div
+                class="progress-bar k-bg-primary-lighter"
+                role="progressbar"
+                style="
+                  width: 25%;
+                  z-index: 2;
+                  margin-left: -5%;
+                  border-radius: 0 20px 20px 0;
+                "
+                aria-valuenow="20"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <div
+                class="progress-bar k-bg-default"
+                role="progressbar"
+                style="
+                  width: 15%;
+                  z-index: 1;
+                  margin-left: -5%;
+                  border-radius: 0 20px 20px 0;
+                "
+                aria-valuenow="10"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <p class="k-primary-light k-text-12 k-bold">Download Report</p>
+          </div>
+        </div>
+        <!-- End cost variance card -->
+      </div>
+      <!-- end row 2 -->
+      <!-- row 3 -->
+      <div class="row">
+        <!-- delivery summaries card -->
+        <div class="col-lg-8 col-sm-12">
+          <div class="k-card k-row-3-card table-card">
+            <div class="k-flex">
+              <h6 class="k-text k-bold">Delivery Summaries</h6>
+              <span class="k-span"></span>
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+            <div>
+              <table class="table table-responsive-md">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Distance</th>
+                    <th scope="col">Total Trip Expenses</th>
+                    <th scope="col">Total Weight</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10/4/2021</td>
+                    <td>1,065</td>
+                    <td>54,315</td>
+                    <td>11,083</td>
+                    <td class="k-text-12 k-primary-light">View details</td>
+                  </tr>
+                  <tr>
+                    <td>10/7/2021</td>
+                    <td>877</td>
+                    <td>48,592</td>
+                    <td>11,083</td>
+                    <td class="k-text-12 k-primary-light">View details</td>
+                  </tr>
+                  <tr>
+                    <td>10/14/2021</td>
+                    <td>1,065</td>
+                    <td>11,083</td>
+                    <td>11,083</td>
+                    <td class="k-text-12 k-primary-light">View details</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- End delivery summaries card -->
+        <!-- pipes delivery summaries card -->
+        <div class="col-lg-4 col-sm-12">
+          <div class="k-card k-row-3-card k-pipes-delivery-summary-card">
+            <div class="k-flex">
+              <h6 class="k-text k-bold">Pipes Delivery Summary</h6>
+              <span class="k-span"></span>
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+            <p>
+              <span class="k-text-14 k-margin">Weight</span>
+              <i class="fa fa-angle-down"></i>
+            </p>
+            <div>
+              <canvas id="pipes-delivery-summary"></canvas>
+            </div>
+          </div>
+        </div>
+        <!-- End pipe delivery summaries card -->
+      </div>
+      <!-- end row 3 -->
+
+      <footer>
+        <p class="text-center k-bold k-text-12">Powered by Tose Technologies</p>
+      </footer>
+    </div>
+    <!-- End main-content -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/jquery.sparkline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wrick17/calendar-plugin@master/calendar.min.js"></script>
+
+    <script>
+      // total delivery cost sparkline
+      const refreshTotalDeliverySparkline = () =>
+        $("#total-delivery-cost").sparkline(
+          [5, 6, 8, 9, 7, 6, 3, 4, 3, 4, 6, 7],
+          {
+            type: "line",
+            width: "100%",
+            height: "75px",
+            lineColor: "#3366cc",
+            fillColor: "#ffffff",
+            lineWidth: 3,
+            spotColor: "#cc0000",
+            minSpotColor: "#cc0000",
+            maxSpotColor: "#cc0000",
+            highlightSpotColor: "#cc0000",
+            highlightLineColor: "#cc0000",
+            spotRadius: 0,
+          }
+        );
+      refreshTotalDeliverySparkline();
+      // end total delivery cost sparkline
+
+      // total weight delivered sparkline
+      const refreshTotalWeightSparkline = () =>
+        $("#total-weight-delivered").sparkline(
+          [5, 6, 8, 9, 7, 6, 3, 4, 3, 4, 6, 7],
+          {
+            type: "line",
+            width: "100%",
+            height: "75px",
+            lineColor: "#3366cc",
+            fillColor: "#ffffff",
+            lineWidth: 3,
+            spotColor: "#cc0000",
+            minSpotColor: "#cc0000",
+            maxSpotColor: "#cc0000",
+            highlightSpotColor: "#cc0000",
+            highlightLineColor: "#cc0000",
+            spotRadius: 0,
+          }
+        );
+      refreshTotalWeightSparkline();
+      // end total weight delivered sparkline
+
+      // delivery analytics chart
+      const deliveryAnalyticsChartData = {
+        labels: [
+          "1 Sep",
+          "4 Sep",
+          "8 Sep",
+          "12 Sep",
+          "16 Sep",
+          "20 Sep",
+          "24 Sep",
+          "28 Sep",
+        ],
+        datasets: [
+          {
+            label: "Rates",
+            backgroundColor: "#fff",
+            borderColor: "#00b8e6",
+            data: [0, 10, 5, 2, 20, 30, 45, 40],
+          },
+        ],
+      };
+
+      const deliveryAnalyticsChartConfig = {
+        type: "line",
+        data: deliveryAnalyticsChartData,
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              ticks: {
+                display: false,
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                color: "#cc0000",
+                font: {
+                  size: 14,
+                  weight: 600,
+                },
+              },
+            },
+          },
+        },
+      };
+
+      const deliveryAnalyticsChart = new Chart(
+        document.getElementById("delivery-analytics"),
+        deliveryAnalyticsChartConfig
+      );
+      // end delivery analytics chart
+
+      // pipes delivery summary pie chart
+      const pipesDeliveryPieChartData = {
+        labels: ["HDPE", "PPR"],
+        datasets: [
+          {
+            label: "Pipes Delivery Summary",
+            data: [500, 180],
+            backgroundColor: ["#6699ff", "#3366cc"],
+            hoverOffset: 4,
+          },
+        ],
+      };
+      const pipesDeliveryPieChartConfig = {
+        type: "pie",
+        data: pipesDeliveryPieChartData,
+      };
+      const pipesDeliveryPieChart = new Chart(
+        document.getElementById("pipes-delivery-summary"),
+        pipesDeliveryPieChartConfig
+      );
+      // end pipes delivery summary pie chart
+
+      // calendar
+      $("#calendar").calendar({ showTodayButton: false });
+
+      // main
+      $("#toggle-sidebar").click(() => {
+        $(".k-sidebar").toggleClass("k-hidden");
+        $(".k-content").toggleClass("k-hidden-sidebar");
+        $("#toggle-sidebar i").toggleClass("fa-bars");
+        $("#toggle-sidebar i").toggleClass("fa-ellipsis-v");
+
+        refreshTotalWeightSparkline();
+        refreshTotalDeliverySparkline();
+      });
+    </script>
+  </body>
+</html>
