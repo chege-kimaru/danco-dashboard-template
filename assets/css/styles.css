@@ -268,8 +268,8 @@ button.k-notification {
   width: 16px;
 }
 
-.k-sidebar .k-section {
-  display: flex;
+.k-sidebar .k-sidebar-section {
+  display: none;
   flex-direction: column;
   margin-bottom: 1.2rem;
 }
@@ -277,6 +277,7 @@ button.k-notification {
 .k-sidebar .k-sidebar-item {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .k-sidebar .k-sidebar-item-title,

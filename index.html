@@ -86,11 +86,11 @@
         <span class="k-icon"><i class="fa fa-tachometer k-margin"></i></span>
         Dashboard
       </a>
-      <div class="k-sidebar-item k-sidebar-item-title">
-        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+      <div id="orders-sidebar-item" class="k-sidebar-item k-sidebar-item-title">
+        <span class="k-icon"><i class="fa fa-caret-down k-margin"></i></span>
         Orders
       </div>
-      <div class="k-sidebar-section">
+      <div id="orders-sidebar-section" class="k-sidebar-section">
         <a href="#" class="k-sidebar-item k-sidebar-item-link">
           <i class="fa fa-th-large k-margin"></i>
           New order
@@ -100,11 +100,14 @@
           Order Summary
         </a>
       </div>
-      <div class="k-sidebar-item k-sidebar-item-title">
-        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+      <div
+        id="products-sidebar-item"
+        class="k-sidebar-item k-sidebar-item-title"
+      >
+        <span class="k-icon"><i class="fa fa-caret-down k-margin"></i></span>
         Products
       </div>
-      <div class="k-sidebar-section">
+      <div id="products-sidebar-section" class="k-sidebar-section">
         <a href="#" class="k-sidebar-item k-sidebar-item-link">
           <i class="fa fa-cube k-margin"></i>
           Add product
@@ -114,11 +117,14 @@
           Product Summary
         </a>
       </div>
-      <div class="k-sidebar-item k-sidebar-item-title">
-        <span class="k-icon"><i class="fa fa-caret-up k-margin"></i></span>
+      <div
+        id="drivers-sidebar-item"
+        class="k-sidebar-item k-sidebar-item-title"
+      >
+        <span class="k-icon"><i class="fa fa-caret-down k-margin"></i></span>
         Drivers
       </div>
-      <div class="k-sidebar-section">
+      <div id="drivers-sidebar-section" class="k-sidebar-section">
         <a href="#" class="k-sidebar-item k-sidebar-item-link">
           <i class="fa fa-user k-margin"></i>
           Add Driver
@@ -514,6 +520,22 @@
 
         refreshTotalWeightSparkline();
         refreshTotalDeliverySparkline();
+      });
+
+      $("#orders-sidebar-item").click(() => {
+        $("#orders-sidebar-section").toggle();
+        $("#orders-sidebar-item span i").toggleClass("fa-caret-up");
+        $("#orders-sidebar-item span i").toggleClass("fa-caret-down");
+      });
+      $("#products-sidebar-item").click(() => {
+        $("#products-sidebar-section").toggle();
+        $("#products-sidebar-item span i").toggleClass("fa-caret-up");
+        $("#products-sidebar-item span i").toggleClass("fa-caret-down");
+      });
+      $("#drivers-sidebar-item").click(() => {
+        $("#drivers-sidebar-section").toggle();
+        $("#drivers-sidebar-item span i").toggleClass("fa-caret-up");
+        $("#drivers-sidebar-item span i").toggleClass("fa-caret-down");
       });
     </script>
   </body>
