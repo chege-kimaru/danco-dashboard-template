@@ -94,7 +94,8 @@ a:hover {
 }
 
 /* Navbar */
-.k-navbar {
+.k-navbar,
+.k-search-bar-mb {
   /* layout */
   position: fixed;
   top: 0;
@@ -108,6 +109,28 @@ a:hover {
   align-items: center;
   padding: 5px 1rem;
   box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+
+.k-search-bar-mb {
+  z-index: 3;
+  display: none;
+}
+
+.k-search-bar-mb.k-show {
+  display: flex;
+}
+
+.k-search-bar-mb input {
+  background-color: transparent;
+  border: none;
+}
+
+.k-search-bar-mb input:focus {
+  outline: none;
+}
+
+.k-search-bar-mb i.fa-times {
+  cursor: pointer;
 }
 
 .k-navbar button {
@@ -138,7 +161,7 @@ a:hover {
 
 .k-navbar button.k-refresh-mb {
   background-color: transparent;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 @media (max-width: 991px) {
@@ -172,7 +195,7 @@ button.k-profile {
 
 .k-navbar button.k-profile-mb {
   background-color: transparent;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 @media (max-width: 991px) {
@@ -192,6 +215,15 @@ button.k-notification {
   background-color: transparent;
   font-size: 28px;
   position: relative;
+}
+
+@media (max-width: 991px) {
+  .k-navbar button.k-message,
+  button.k-notification {
+    background-color: transparent;
+    font-size: 24px;
+    position: relative;
+  }
 }
 
 .k-navbar button.k-message .k-messages-count,
@@ -221,8 +253,19 @@ button.k-notification {
   min-width: 300px;
 }
 
+.k-navbar button.k-search-mb {
+  background-color: transparent;
+  font-size: 24px;
+}
+
 @media (max-width: 991px) {
   .k-navbar .k-search {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .k-navbar .k-search-mb {
     display: none;
   }
 }
@@ -295,6 +338,14 @@ button.k-notification {
   font-size: 12px;
   margin-bottom: 10px;
   margin-left: 24px;
+}
+
+.k-sidebar .k-sidebar-footer {
+  margin-bottom: 5rem;
+}
+
+.k-sidebar .k-sidebar-footer img {
+  height: 14px;
 }
 
 /* End Sidebar */

@@ -32,6 +32,11 @@
   </head>
   <body class="k-body">
     <!-- Nav-bar -->
+    <div class="k-search-bar-mb">
+      <i class="fa fa-search k-margin"></i>
+      <input placeholder="search" type="text" class="k-span k-margin" />
+      <i id="closeSearchBar" class="fa fa-times k-margin"></i>
+    </div>
     <div class="k-navbar">
       <button id="toggle-sidebar" class="k-margin k-menu">
         <i class="fa fa-bars"></i>
@@ -51,6 +56,9 @@
         <i class="fa fa-search k-margin"></i>
         <input type="text" placeholder="search" />
       </div>
+      <button class="k-search-mb k-margin" id="searchBtnMb">
+        <i class="fa fa-search"></i>
+      </button>
       <!-- time-span -->
       <button class="k-timespan k-margin">
         <span class="k-margin">Monthly</span>
@@ -70,13 +78,46 @@
         <span class="k-notifications-active"></span>
       </button>
       <!-- time-span -->
-      <button class="k-profile">
-        <span class="k-margin">Anesu Makwasha</span>
-        <i class="fa fa-angle-down"></i>
-      </button>
-      <button class="k-profile-mb">
-        <i class="fa fa-user-o"></i>
-      </button>
+      <div class="dropdown">
+        <button
+          class="k-profile"
+          id="profileMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="k-margin">Anesu Makwasha</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="profileMenuButton">
+          <a class="dropdown-item" href="#"
+            ><i class="fa fa-cog k-margin"></i> Settings</a
+          >
+          <a class="dropdown-item" href="#"
+            ><i class="fa fa-sign-out k-margin"></i> Logout</a
+          >
+        </div>
+      </div>
+      <!-- For Mobile -->
+      <div class="dropdown">
+        <button
+          class="k-profile-mb"
+          id="profileMbMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <i class="fa fa-user-o"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="profileMbMenuButton">
+          <a class="dropdown-item" href="#"
+            ><i class="fa fa-cog k-margin"></i> Settings</a
+          >
+          <a class="dropdown-item" href="#"
+            ><i class="fa fa-sign-out k-margin"></i> Logout</a
+          >
+        </div>
+      </div>
     </div>
     <!-- End Nav-bar -->
 
@@ -142,6 +183,10 @@
         <span class="k-icon"><i class="fa fa-sign-out k-margin"></i></span>
         Sign Out
       </a>
+      <div class="k-span"></div>
+      <div class="text-center k-sidebar-footer">
+        <img class="k-logo" src="assets/images/tose-logo.png" alt="" />
+      </div>
     </div>
     <!-- End Side-bar -->
 
@@ -512,6 +557,16 @@
       $("#calendar").calendar({ showTodayButton: false });
 
       // main
+      $("#searchBtnMb").click(() => {
+        $(".k-search-bar-mb").toggleClass("k-show");
+        $(".k-navbar").hide();
+      });
+
+      $("#closeSearchBar").click(() => {
+        $(".k-search-bar-mb").toggleClass("k-show");
+        $(".k-navbar").show();
+      });
+
       $("#toggle-sidebar").click(() => {
         $(".k-sidebar").toggleClass("k-hidden");
         $(".k-content").toggleClass("k-hidden-sidebar");
